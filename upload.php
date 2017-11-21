@@ -1,3 +1,26 @@
+<?php 
+// On extrait la valeur de l'ancien cookie dans "cookie_old"
+$cookie_old = "";
+
+if(isset($_POST["submit"]) && $_POST["prenom"] != "")
+{
+	if(isset($_COOKIE["prenom"]) )
+	{
+		$cookie_old = $_COOKIE["prenom"];
+
+	}
+
+	// Cookie prénom valable 1 jour
+	setcookie("prenom", $prenom, time() + (86400 * 30), "/");
+
+}
+
+
+
+?>
+
+
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -10,6 +33,10 @@
 $target_dir = "uploads/";
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$prenom = "";
+$warning = ""; 
+
+
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
         $uploadOk = 1;
@@ -20,6 +47,7 @@ if(isset($_POST["submit"])) {
 // Verifie si le prénom est bien rentré
 if( $_POST["prenom"] != "")  {
         $uploadOk = 1;
+        $prenom = strtolower($_POST["prenom"]);
     } else {
         $uploadOk = 0;
        ?>  <strong><?php echo "Il faut preciser un prenom !"; ?></strong><br/><br/> <?php
@@ -44,16 +72,16 @@ if ($uploadOk == 0) {
 } 
 else {
 
-	if (!file_exists($target_dir . $_POST["prenom"])) {
+	if (!file_exists($target_dir . $prenom)) {
 
     mkdir($target_dir . $_POST["prenom"], 0777, true);
     // touch($target_dir . $_POST["prenom"] . "/index.php");
-    $myfile = fopen($target_dir . $_POST["prenom"]."/index.php", "w") or die("Unable to open file!");
+    $myfile = fopen($target_dir . $prenom."/index.php", "w") or die("Unable to open file!");
 	fwrite($myfile, " ");
 	fclose($myfile);
 	}
 
-	$target_file = $target_dir . $_POST["prenom"] . "/" . basename($_FILES["fileToUpload"]["name"]);
+	$target_file = $target_dir . $prenom . "/" . basename($_FILES["fileToUpload"]["name"]);
 
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
