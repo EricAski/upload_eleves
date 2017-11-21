@@ -92,26 +92,6 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 			fwrite($myfile, " ");
 			fclose($myfile);
 		}
-		$texte = "";
-		/*
-		if($cookie_old != "")
-		{
-		// Si le prenom a changé entre les deux uploads
-			if($cookie_old != $prenom)
-			{
-				$warning = "WARNING";
-				$texte = "WARNING : Ancien nom : " . $cookie_old;
-			}
-			else
-			{
-				$texte = "Ancien nom : " . $cookie_old;
-			} 
-		}
-		else
-		{
-			$texte = "Premier enregistrement de l'utilisateur";
-		}*/
-
 		
 		$texte = "Enregistrement  à ".date(' G:i:s')."<br />";
 		// On ajoute le contenu de "texte" dns le fichier index de l'utilisateur
