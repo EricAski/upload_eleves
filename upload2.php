@@ -1,7 +1,13 @@
 <?php 
+
+date_default_timezone_set('Asia/Hong_Kong');
+
+
+
 // On extrait la valeur de l'ancien cookie dans "cookie_old"
 $cookie_old = "";
 $prenom = "";
+
 if(isset($_POST["submit"]) && $_POST["prenom"] != "")
 {
 	$prenom = strtolower($_POST["prenom"]);
@@ -65,7 +71,7 @@ if ($uploadOk == 0) {
 else {
 	if (!file_exists($target_dir . $prenom)) 
 	{
-	    mkdir($target_dir . $_POST["prenom"], 0777, true);
+	    mkdir($target_dir . $prenom, 0777, true);
 	    // touch($target_dir . $_POST["prenom"] . "/index.php");
 	    $myfile = fopen($target_dir . $prenom ."/index.php", "w") or die("Unable to open file!");
 		fwrite($myfile, " ");
@@ -78,11 +84,11 @@ else {
 		if($cookie_old != $prenom)
 		{
 			$warning = "WARNING";
-			$texte = "WARNING : Ancien nom : " . $prenom;
+			$texte = "WARNING : Ancien nom : " . $cookie_old;
 		}
 		else
 		{
-			$texte = "Ancien nom : " . $prenom;
+			$texte = "Ancien nom : " . $cookie_old;
 		} 
 	}
 	else
@@ -90,10 +96,14 @@ else {
 		$texte = "Premier enregistrement de l'utilisateur";
 	}
 	// On ajoute le contenu de "texte" dns le fichier index de l'utilisateur
-	//$data = $texte.PHP_EOL;
-	//$fp = fopen($target_dir . $prenom ."/index.php", 'a');
-	//fwrite($fp, $data);
-	$target_file = "uploads/" . $prenom . "/" . $warning . basename($_FILES["fileToUpload"]["name"]);
+	$data = $texte.PHP_EOL;
+	$fp = fopen($target_dir . $prenom ."/index.php", 'a');
+
+	$current_date = date('h_i_s');
+
+
+	fwrite($fp, $data);
+	$target_file = "uploads/" . $prenom . "/" . $warning . basename($_FILES["fileToUpload"]["name"]) . $current_date;
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
     {
         ?> 
@@ -107,6 +117,10 @@ else {
     }
 }
 ?>
+
+<br/><br/><br/><br/>
+
+<a href="index.php">Retourner à la page précédente</a>
 
 
 
