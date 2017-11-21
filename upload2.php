@@ -1,9 +1,13 @@
 <?php 
 // On extrait la valeur de l'ancien cookie dans "cookie_old"
 $cookie_old = "";
+$prenom = "";
 
 if(isset($_POST["submit"]) && $_POST["prenom"] != "")
 {
+
+	$prenom = strtolower($_POST["prenom"]);
+
 	if(isset($_COOKIE["prenom"]) )
 	{
 		$cookie_old = $_COOKIE["prenom"];
@@ -30,7 +34,6 @@ if(isset($_POST["submit"]) && $_POST["prenom"] != "")
 <body>
 
 <?php
-$prenom = "";
 $warning = "";
 
 
