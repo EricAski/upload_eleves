@@ -1,0 +1,53 @@
+% Entête du document - Document Header
+\documentclass{article} 
+\usepackage[frenchb]{babel} % Pour la typographie française
+\usepackage[utf8]{inputenc} % Pour les accents français
+\usepackage[T1]{fontenc} % Pour les polices de caractère ? 
+\usepackage[margin=3cm]{geometry} % Plus de marges
+
+\usepackage{amsthm} % (ter)
+\usepackage{amsmath} % Pour les maths
+\usepackage{amssymb} % Pour les maths (bis)
+\usepackage{ stmaryrd } % pour les flèches
+\usepackage[final]{pdfpages}
+
+\usepackage{hyperref} % Pour les liens
+
+\usepackage{tocloft} % Pour la TOC
+
+\usepackage{xcolor}
+\usepackage{soul}
+
+\sethlcolor{cyan}
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images
+
+
+% Pour la police Palatino, supprimer les 2 lignes suivantes pour la police normale
+\usepackage{mathpazo} % Use the Palatino font
+\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+
+
+
+
+\title{ TITRE ICI}
+
+
+\date{ Dernière modification le :  \textbf{\today}   }
+\author{Eric Askinazi}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+
+
+\end{document}
