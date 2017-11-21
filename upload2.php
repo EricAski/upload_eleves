@@ -2,25 +2,16 @@
 // On extrait la valeur de l'ancien cookie dans "cookie_old"
 $cookie_old = "";
 $prenom = "";
-
 if(isset($_POST["submit"]) && $_POST["prenom"] != "")
 {
-
 	$prenom = strtolower($_POST["prenom"]);
-
 	if(isset($_COOKIE["prenom"]) )
 	{
 		$cookie_old = $_COOKIE["prenom"];
-
 	}
-
 	// Cookie prénom valable 1 jour
 	setcookie("prenom", $prenom, time() + (86400 * 30), "/");
-
 }
-
-
-
 ?>
 
 
@@ -35,13 +26,11 @@ if(isset($_POST["submit"]) && $_POST["prenom"] != "")
 
 <?php
 $warning = "";
-
-
 if(isset($_POST["submit"])) 
 {
+	$target_dir = "uploads/";
     $uploadOk = 1;
     $prenom = strtolower($_POST["prenom"]);
-
     // Verifie si le prénom est bien rentré
 	if($prenom != "")  
 	{
@@ -58,16 +47,11 @@ if(isset($_POST["submit"]))
 {
         $uploadOk = 0;
 }
-
-
-
 // Verifie que le fichier a bien été précisé
 if ($_FILES["fileToUpload"]["size"] < 1) {
      ?>  <strong><?php echo "Il faut préciser le fichier à metter en ligne. "; ?></strong><br/> <?php
     $uploadOk = 0;
 }
-
-
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 10000000) {
      ?>  <strong><?php echo "Ce fichier est beaucoup trop lourd. "; ?></strong><br/> <?php
@@ -79,7 +63,6 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } 
 else {
-
 	if (!file_exists($target_dir . $prenom)) 
 	{
 	    mkdir($target_dir . $_POST["prenom"], 0777, true);
@@ -88,10 +71,7 @@ else {
 		fwrite($myfile, " ");
 		fclose($myfile);
 	}
-
-
 	$texte = "";
-
 	if($cookie_old != "")
 	{
 		// Si le prenom a changé entre les deux uploads
@@ -109,20 +89,18 @@ else {
 	{
 		$texte = "Premier enregistrement de l'utilisateur";
 	}
-
 	// On ajoute le contenu de "texte" dns le fichier index de l'utilisateur
 	//$data = $texte.PHP_EOL;
 	//$fp = fopen($target_dir . $prenom ."/index.php", 'a');
 	//fwrite($fp, $data);
-
 	$target_file = "uploads/" . $prenom . "/" . $warning . basename($_FILES["fileToUpload"]["name"]);
-
-
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
     {
-        ?> <strong style="color : green"><?php echo "Le fichier : ". basename( $_FILES["fileToUpload"]["name"]). " a été mis en ligne."; ?> </strong>
+        ?> 
+        <strong style="color : green"> <?php echo "Le fichier : ". basename( $_FILES["fileToUpload"]["name"]). " a été mis en ligne."; ?> </strong>
 
    <?php
+	}
     else 
     {
         echo "Il y a eu une erreur technique";
