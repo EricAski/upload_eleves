@@ -78,10 +78,10 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 	}
 	if($erreurVerif)
 		echo "<p> Les prenoms ne concordent pas </p>";
-// Check if $uploadOk is set to 0 by an error
+// On regarde s'il y a eu un problème
 	if ($uploadOk == 0) {
 		?>  <h2 style="color : red"><strong><?php echo "Le fichier n'a pas été mis en ligne."; ?></strong></h2><br/> <?php
-// if everything is ok, try to upload file
+// S'il n'y a pas eu de problèmes on essaie de mettre en ligne le fichier
 	} 
 	else {
 		if (!file_exists($target_dir . $prenom)) 
@@ -93,16 +93,16 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 			fclose($myfile);
 		}
 		
-		$texte = "Enregistrement  à ".date(' G:i:s')."<br />";
+		$texte = "Enregistrement  a : ".date(' G:i:s')."<br />";
 		// On ajoute le contenu de "texte" dns le fichier index de l'utilisateur
 		$data = $texte.PHP_EOL;
 		$fp = fopen($target_dir . $prenom ."/index.php", 'a');
+		fwrite($fp, $data);
+
+
 		$current_date = date('G_i_s');
 		
 
-
-		fwrite($fp, $data);
-		//$target_file = "uploads/" . $prenom . "/"  . basename($_FILES["fileToUpload"]["name"]) . $current_date;
 		$file_name =  pathinfo($_FILES["fileToUpload"]["name"],PATHINFO_FILENAME);
 		$extension_name = pathinfo($_FILES["fileToUpload"]["name"],PATHINFO_EXTENSION);
 		$standard_name = $file_name."_".$current_date.".".$extension_name;

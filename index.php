@@ -12,10 +12,17 @@
 </head>
 <body>
 
-<a href="fichiers/"> Télécharger les fichiers </a>
+<?php $fichiers_dossier = scandir("fichiers");
 
-<h2>Mise en ligne du code MAXIMA</h2>
-<form action="upload2.php" method="post" enctype="multipart/form-data">
+// On affiche le dossier des fichiers si et seulement si il y a des images à télécharger
+// "> 3" pour ne pas compter . et .. et "index.php"
+if (count($fichiers_dossier) > 3)
+{
+	echo '<a href="fichiers/"> Télécharger les fichiers </a>';
+} ?>
+
+<h2>Mise en ligne des fichiers</h2>
+<form action="upload.php" method="post" enctype="multipart/form-data">
 	<?php
 	if(!isset($_COOKIE['prenom']))
 	{
