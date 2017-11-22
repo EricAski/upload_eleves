@@ -33,9 +33,14 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 <head>
 	<meta charset="utf-8">
 	<title>Page mise en ligne</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/centering.css" rel="stylesheet">
+
 </head>
 <body>
 
+<div class="center_div">
 	<?php
 	$warning = "";
 	if(isset($_POST["submit"])) 
@@ -93,7 +98,7 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 			fclose($myfile);
 		}
 		
-		$texte = "Enregistrement  a : ".date(' G:i:s')."<br />";
+		$texte = "Enregistrement  a : ".date(' G:i:s')." par : " . $_SERVER['REMOTE_ADDR'] . "<br />";
 		// On ajoute le contenu de "texte" dns le fichier index de l'utilisateur
 		$data = $texte.PHP_EOL;
 		$fp = fopen($target_dir . $prenom ."/index.php", 'a');
@@ -126,6 +131,7 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 	<a href="index.php">Retourner à la page précédente</a>
 
 
+</div>
 
 </body>
 </html>
