@@ -26,7 +26,7 @@ Press Ctrl-C to quit.
 * Si des fichiers sont présents dans le dossier `fichiers` un lien s'affichera sur la page pour que les étudiants puissent les télécharger
 * Les fichiers mis en ligne pas les étudiants apparaissent dans le dossier `serveur_local/uploads`, l'heure de mise en ligne est automatiquement ajoutée au nom du fichier
 * Il est possible de voir l'adresse ip de la personne ayant mis en ligne les fichiers en allant sur `http://xxx.yyy.zzz.ttt/uploads/nom_de_l'élève`
-
+* Les dernieres versions mises en ligne par les étudiants sont toutes disponibles dans le dossier `versionsfinales` sous la forme `nom_de_l'élève.extension`.
 
 ~
 
