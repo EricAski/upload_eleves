@@ -112,6 +112,8 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 		$extension_name = pathinfo($_FILES["fileToUpload"]["name"],PATHINFO_EXTENSION);
 		$standard_name = $file_name."_".$current_date.".".$extension_name;
 		$target_file = "uploads/" . $prenom . "/"  . $standard_name;
+
+
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
 		{
 			?> 
@@ -123,6 +125,21 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 		{
 			echo "<p>Il y a eu une erreur technique</p>";
 		}
+
+		if (!file_exists($target_dir . "versionsfinales")) 
+		{
+			mkdir($target_dir ."versionsfinales", 0777, true);
+		}
+
+		$final_name = $prenom.".".$extension_name;
+		$target_final = "uploads/versionsfinales/".$final_name;
+		if (!copy($target_file,$target_final)) 
+		{
+			echo "<p>Il y a eu une erreur technique</p>";
+		}
+		
+
+		
 	}
 	?>
 
