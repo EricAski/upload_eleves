@@ -21,7 +21,7 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 	{
 		
 		$erreurVerif= false;
-		setcookie("prenom", $prenom, time() + (86400 * 30), "/"); // Cookie prénom valable 1 jour
+		setcookie("prenom", $prenom, time() + (86400), "/"); // Cookie prénom valable 1 jour
 	}
 }
 ?>

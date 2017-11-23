@@ -24,5 +24,12 @@
 			<br/> <br/>
 			<input type="submit" value="Ajouter" name="submit">
 		</form>
+
+		<form action="admin_post.php" method="post" >
+			<h3>Suppression des utilisateurs</h3>
+			<p><input type="submit" value="Supprimer les utilisateurs" name="delete"> <br/> </p>
+			<p> <strong>Attention ! </strong> Cette action est irréversible !</p>
+		</form>
+
 	</div>
 </body>
