@@ -15,7 +15,9 @@
 
 </head>
 <body>
-
+<div class = "deco">
+	<p><a href="private/index.php">Deconnexion</a></p>
+</div>
 <div class = "center_div">
 
 	<div class = "logo">

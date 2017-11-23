@@ -17,5 +17,9 @@ table.center_table {
 
 .logo
 {
-    margin-top: 10mm
+    margin-top: 10mm;
+}
+.deco
+{
+    margin-left: 2mm;
 }
