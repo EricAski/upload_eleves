@@ -15,5 +15,10 @@ div.center_div {
 table.center_table {
     margin-left:auto; 
     margin-right:auto;
-    margin-top:-15mm;
+    margin-top:15mm;
   }
+
+.logo
+{
+    margin-top: 10mm
+}

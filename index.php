@@ -18,7 +18,9 @@
 
 <div class = "center_div">
 
-	<img src="logo.png" alt="Logo du speit" width = 25%>
+	<div class = "logo">
+		<img src="logo.png" alt="Logo du speit" width = 25%>
+	</div>
 
 	<br/><br/>
 
@@ -48,7 +50,7 @@
 		}
 		else
 		{
-			echo "<br><br><br><br><td><strong> Votre prénom </strong> : </td> <td> ".$_COOKIE['prenom']."</td> ";
+			echo "<td><strong> Votre prénom </strong> : </td> <td> ".$_COOKIE['prenom']."</td> ";
 		}
 		
 		?>
