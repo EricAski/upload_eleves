@@ -98,7 +98,7 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 			fclose($myfile);
 		}
 		
-		$texte = "Enregistrement  a : ".date(' G:i:s')." par : " . $_SERVER['REMOTE_ADDR'] . "<br />";
+		$texte = "Enregistrement de : ". basename( $_FILES["fileToUpload"]["name"]) . " a : ".date(' G:i:s')." par : " . $_SERVER['REMOTE_ADDR'] . "<br />";
 		// On ajoute le contenu de "texte" dns le fichier index de l'utilisateur
 		$data = $texte.PHP_EOL;
 		$fp = fopen($target_dir . $prenom ."/index.php", 'a');
