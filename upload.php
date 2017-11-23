@@ -59,7 +59,7 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 		else if(!$erreurVerif)
 		{
 			$uploadOk = 0;
-			?>  <strong><?php echo "Il faut preciser un prenom !"; ?></strong><br/><br/> <?php
+			?>  <p><strong><?php echo "Il faut preciser un prenom !"; ?></strong><br/><br/> </p><?php
 		}
 		else
 		{
@@ -73,16 +73,16 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 	}
 // Verifie que le fichier a bien été précisé
 	if ($_FILES["fileToUpload"]["size"] < 1) {
-		?>  <strong><?php echo "Il faut préciser le fichier à metter en ligne. "; ?></strong><br/> <?php
+		?>  <P><strong><?php echo "Il faut préciser le fichier à metter en ligne. "; ?></strong><br/></p> <?php
 		$uploadOk = 0;
 	}
 // Check file size
 	if ($_FILES["fileToUpload"]["size"] > 10000000) {
-		?>  <strong><?php echo "Ce fichier est beaucoup trop lourd. "; ?></strong><br/> <?php
+		?>  <p><strong><?php echo "Ce fichier est beaucoup trop lourd. "; ?></strong><br/></p> <?php
 		$uploadOk = 0;
 	}
 	if($erreurVerif)
-		echo "<p> Les prenoms ne concordent pas </p>";
+		echo "<p> <strong> Les prenoms ne concordent pas </strong></p>";
 // On regarde s'il y a eu un problème
 	if ($uploadOk == 0) {
 		?>  <h2 style="color : red"><strong><?php echo "Le fichier n'a pas été mis en ligne."; ?></strong></h2><br/> <?php
@@ -121,14 +121,14 @@ if(isset($_POST["submit"]) && isset($_POST["prenom"]) && isset($_POST["prenom_ve
 		}
 		else 
 		{
-			echo "Il y a eu une erreur technique";
+			echo "<p>Il y a eu une erreur technique</p>";
 		}
 	}
 	?>
 
-	<br/><br/><br/><br/>
+	<br/><br/><br/>
 
-	<a href="index.php">Retourner à la page précédente</a>
+	<p><a href="index.php">Retourner à la page précédente</a></p>
 
 
 </div>

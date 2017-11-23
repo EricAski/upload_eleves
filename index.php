@@ -45,8 +45,8 @@
 		<?php
 		if(!isset($_COOKIE['prenom']))
 		{
-			echo '<td> <label for="prenom">Prenom : </label> </td> <td><input type="text" name="prenom" id ="prenom"> </td> <br><br> </tr>    <tr><td> &nbsp;&nbsp;</td></tr>      <tr>
-			<td><label for="prenom_verif">Vérification du prénom : </label> </td><td><input type="text" name="prenom_verif" id ="prenom_verif">  </td> <br><br>';
+			echo '<td> <label for="prenom">Prenom : </label> </td> <td><input type="text" name="prenom" id ="prenom"> </td></tr>    <tr><td> &nbsp;&nbsp;</td></tr>      
+			<tr><td><label for="prenom_verif">Vérification du prénom : </label> </td><td><input type="text" name="prenom_verif" id ="prenom_verif"> </td>';
 		}
 		else
 		{
@@ -62,10 +62,10 @@
 	    </tr>
 		</table>
 	    <br/><br/>
-	    <input type="submit" value="mettre en ligne" name="submit">
+	    <input type="submit" value="Mettre en ligne" name="submit">
 	    <?php 
 		if(!isset($_COOKIE['prenom']))
-			echo "<br/><p> <strong>Attention ! </strong> Vous ne pourrez plus changer de nom ultérieurement !</p>";
+			echo "<br/> <br/><p> <strong>Attention ! </strong> Vous ne pourrez plus changer de nom ultérieurement !</p>";
 	    ?>
 	    
 	</form>
