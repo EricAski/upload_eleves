@@ -3,7 +3,7 @@
 ### Installation (Nécessite une connexion internet) :
  
 * Installation de PHP : Tapez dans le terminal `sudo apt-get install php`pour installer PHP (nécessaire à la création du serveur local)
-* Télécharchez le code source : placez vous dans le dossier de votre choix, faites un clic droit sur la fenêtre, cliquez sur `ouvrir dans un terminal` et tapez dans le terminal `wget https://github.com/EricAski/upload_eleves/archive/master.zip -O serveur_local.zip; unzip serveur_local.zip` pour télécharger les fichiers sources et les décompresser dans le dossier actuel.
+* Télécharchez le code source : placez vous dans le dossier de votre choix, faites un clic droit sur la fenêtre, cliquez sur `ouvrir dans un terminal` et tapez dans le terminal `wget https://github.com/EricAski/upload_eleves/archive/speit.zip -O serveur_local.zip; unzip serveur_local.zip` pour télécharger les fichiers sources et les décompresser dans le dossier actuel.
 
 ### Lancement (internet plus nécessaire) :
 * Activez la connexion en mode "lien local uniquement" dans les "paramètres IPV4" Ubuntu (**Inutile s'il y a internet**).
@@ -25,10 +25,10 @@ Press Ctrl-C to quit.
 ### Fonctionnement
 
 * Si des fichiers sont présents dans le dossier `fichiers` un lien s'affichera sur la page pour que les étudiants puissent les télécharger
-* Les fichiers mis en ligne pas les étudiants apparaissent dans le dossier `upload_eleves-master/uploads`, l'heure de mise en ligne est automatiquement ajoutée au nom du fichier
+* Les fichiers mis en ligne pas les étudiants apparaissent dans le dossier `upload_eleves-speit/uploads`, l'heure de mise en ligne est automatiquement ajoutée au nom du fichier
 * Il est possible de voir l'adresse ip de la personne ayant mis en ligne les fichiers en allant sur `http://xxx.yyy.zzz.ttt/uploads/nom_de_l'élève`
 * Les dernieres versions mises en ligne par les étudiants sont toutes disponibles dans le dossier `versionsfinales` sous la forme `nom_de_l'élève.extension`.
 
 ~
 
-Eric Askinazi, Arnaud Robin
+Eric Askinazi, Arnaud Robin, Geoffrey Boutard

@@ -1,4 +1,0 @@
-AuthName "Page de déconnexion protégée"
-AuthType Basic
-AuthUserFile "C:\wamp64\www\upload_eleves\private\.htpasswd"
-Require valid-user
